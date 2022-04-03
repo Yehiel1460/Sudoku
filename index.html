@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Page Title</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Mono:wght@200&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="login">
+        <p id="title">Welcome to my suduko</p>
+        <input id="username" type="email" placeholder="User Name">
+        <p id="wrong--username"></p>
+        <input id="password" type="password" placeholder="Password">
+        <p id="wrong--password"></p>
+        <button onclick="login()">Let's Start</button><br><br><br>
+        <a onclick="forgotInp(true)" class="forgot" id="forgotPassword" href="#">Forgot Password?
+        </a>
+        <a onclick="forgotInp()" class="forgot" id="forgotUserName" href="#">Forgot
+          UserName?</a>
+    </div>
+  </div>
+  <div id="btnContainer">
+    <div id="chooseBtnScreen">
+      <input id="playername" type="text" placeholder="Enter your name:" required>
+      <h3 id="InpEmptyMsg">Please enter your name :)</h3>
+      <button class="levelBtn" onclick="fillBoard(hideNumbers(randomBoard(),'easy'))">Easy</button>
+      <button class="levelBtn" onclick="fillBoard(hideNumbers(randomBoard(),'medium'))">Medium</button>
+      <button class="levelBtn" onclick="fillBoard(hideNumbers(randomBoard(),'hard'))">Hard</button><br>
+    </div>
+  </div>
+  <div id="gameScreen">
+    <h3 id="boardPlayerName"></h3>
+    <div id="stopwatch">00:00:00</div>
+    <div class="board_contaniner">
+      <div class="board">
+      </div>
+    </div>
+    
+    <button class="boardBtn" id="finishBtn" onclick="finishBtnBoard()">Finish</button>
+    <button class="boardBtn" id="restartLvl" onclick="restartLvl(currentBoardWithHidenNumbers)" >Restart Level</button>
+    <button class="boardBtn" onclick="BackToLevelScreen(currentBoard)">Difflcult Screen</button>
+  </div>
+
+
+  <script src='sudoku2.js'></script>
+</body>
+
+</html>
